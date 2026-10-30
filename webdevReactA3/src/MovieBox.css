@@ -1,0 +1,84 @@
+body {
+  font-family: sans-serif;
+  background: #F3F3F3;
+  color: #000000;
+  margin: 20px;
+}
+
+#movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.MocieBox {
+  min-width: 0;   
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.movie img {
+  width: 90%;           
+  display: block;
+  border-radius: 8px;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.Information {
+  margin-left:5%;
+  margin-right:5%;
+  text-align: center;
+  line-height: 30px;
+}
+
+
+.ButtonsAndSuch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+#page:hover{
+  background-color: #1f6fb8;
+
+}
+
+#page{
+  background-color: #2f8fe0;
+  border-radius: 8px;
+  border: none;
+  height: 40px;
+  width: 100px;
+  color: #ffffff;
+}
+
+#Search, #SortBy {
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.BigHeader{
+  background-color: #1a2e3e;
+  color: #ffffff;
+  height: 150px;
+  width: calc(100% + 40px);
+  margin: -20px;
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+#searchAndSort {
+background-color: #274862;
+width: calc(100% + 40px);
+margin-left: -20px;
+margin-right: -20px;
+}
