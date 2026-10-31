@@ -48,17 +48,18 @@ function MovieBox() {
     }
 
   return (
-    <div className="MocieBox">
-      <input type="text" placeholder="Search for a movie..." value={searchBox} onChange={handleSearchChange} />
-         <select id="SortBy" value={sorting} onChange={handleSortingChange}>
-    <option value="popularity.desc">Sort By</option>
-    <option value="release_date.asc">Release Date (Asc)</option>
-    <option value="release_date.desc">Release Date (Desc)</option>
-    <option value="vote_average.asc">Rating (Asc)</option>
-    <option value="vote_average.desc">Rating (Desc)</option>
-  </select>
-
-    <div id = "movies" className="movieCard"> 
+    <div className="MovieBoxxxx">
+    <div className="secondaryHeader">
+    <input id = "Search" type="text" placeholder="Search for a movie..." value={searchBox} onChange={handleSearchChange} />
+    <select id="SortBy" value={sorting} onChange={handleSortingChange}>
+        <option value="popularity.desc">Sort By</option>
+        <option value="release_date.asc">Release Date (Asc)</option>
+        <option value="release_date.desc">Release Date (Desc)</option>
+        <option value="vote_average.asc">Rating (Asc)</option>
+        <option value="vote_average.desc">Rating (Desc)</option>
+    </select>
+    </div>
+    <div id = "movies"> 
         {movies.map((movie) => (
 
             <div key={movie.id} className="movieCard">
@@ -66,17 +67,19 @@ function MovieBox() {
                     error.target.src = noFoundImage;
                 }} />
                 <div className="movieInfo">
-                    <strong>{movie.title}</strong>
-                    <br /> Release date: {movie.release_date}<br />
+                    <strong id ="title">{movie.title}</strong>
+                    <p> Release date: {movie.release_date}</p>
                     <p>Rating: {movie.vote_average}</p>
                 </div>
             </div>
         ))}
     </div>
-    <div class="pagesPart">
-        <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage >= totalPages }>Next</button>
+    <div className="pagesPart">
+                <button className="page" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
+
         <p>Page {currentPage} of {totalPages}</p>
-        <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
+                <button className="page" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage >= totalPages }>Next</button>
+
     </div>
      </div>
   );
